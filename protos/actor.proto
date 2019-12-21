@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+service StrStrActor {
+
+  // send a message
+  rpc send_message (sendStrMsg) returns (strReply) {}
+
+}
+
+message sendStrMsg {
+  string msg = 1;
+}
+
+message strReply {
+  string reply = 1;
+}
+
+
+service ByteByteActor {
+  
+  // send a message
+  rpc send_message(sendByteMsg) returns (byteReply) {}
+
+}
+
+message sendByteMsg {
+  bytes msg = 1;
+}
+
+message byteReply {
+  bytes reply = 1;
+}
